@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation des propositions</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="dashboard.html">Tableau de bord</a>
+                <a href="event-list.html">Liste des événements</a>
+            </div>
+            <div class="user-role-dropdown">
+                <label for="user-role">Rôle :</label>
+                <select id="user-role" class="role-selector">
+                    <option value="non-connecte">Non connecté</option>
+                    <option value="habitant">Habitant</option>
+                    <option value="benevole">Bénévole</option>
+                    <option value="organisateur">Organisateur municipal</option>
+                    <option value="admin">Administrateur</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="validation-section">
+            <h2>Validation des propositions</h2>
+            <ul>
+                <li>
+                    <h3>Proposition 1</h3>
+                    <p>Description : Journée de nettoyage des espaces verts</p>
+                    <button class="button approve">Valider</button>
+                    <button class="button reject">Rejeter</button>
+                </li>
+                <li>
+                    <h3>Proposition 2</h3>
+                    <p>Description : Atelier artistique pour enfants</p>
+                    <button class="button approve">Valider</button>
+                    <button class="button reject">Rejeter</button>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <script src="../js/role-management.js"></script>
+</body>

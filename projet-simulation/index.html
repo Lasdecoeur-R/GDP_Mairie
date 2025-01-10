@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="login.html">Connexion</a>
+                <a href="register.html">Inscription</a>
+                <a href="dashboard.html" style="display: none;">Tableau de bord</a>
+                <a href="event-submission.html" style="display: none;">Soumettre une idée</a>
+                <a href="event-list.html" style="display: none;">Liste des événements</a>
+                <a href="event-validation.html" style="display: none;">Validation des propositions</a>
+                <a href="volunteer-management.html" style="display: none;">Gestion des bénévoles</a>
+                <a href="stats.html" style="display: none;">Statistiques</a>
+            </div>
+            <div class="user-role-dropdown">
+                <label for="user-role">Rôle :</label>
+                <select id="user-role" class="role-selector">
+                    <option value="non-connecte">Non connecté</option>
+                    <option value="habitant">Habitant</option>
+                    <option value="benevole">Bénévole</option>
+                    <option value="organisateur">Organisateur municipal</option>
+                    <option value="admin">Administrateur</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="welcome">
+            <h1>Bienvenue sur l'application de gestion des événements</h1>
+            <p>Connectez-vous ou inscrivez-vous pour commencer.</p>
+            <a href="login.html" class="button">Connexion</a>
+            <a href="register.html" class="button">Inscription</a>
+        </section>
+    </main>
+    <script>
+        // Gestion des rôles et visibilité
+        document.addEventListener("DOMContentLoaded", () => {
+            const roleSelector = document.getElementById("user-role");
+            const links = document.querySelectorAll(".nav-links a");
+
+            // Définit les droits pour chaque rôle
+            const rolePermissions = {
+                "non-connecte": ["index.html", "login.html", "register.html"],
+                "habitant": ["index.html", "dashboard.html", "event-submission.html", "event-list.html"],
+                "benevole": ["index.html", "dashboard.html", "event-list.html", "volunteer-management.html"],
+                "organisateur": ["index.html", "dashboard.html", "event-list.html", "event-validation.html"],
+                "admin": ["index.html", "dashboard.html", "event-list.html", "event-validation.html", "stats.html"]
+            };
+
+            // Fonction pour ajuster la visibilité des liens
+            const updateNavLinks = (role) => {
+                links.forEach(link => {
+                    const href = link.getAttribute("href");
+                    if (rolePermissions[role].includes(href)) {
+                        link.style.display = "inline"; // Affiche les liens autorisés
+                    } else {
+                        link.style.display = "none"; // Cache les autres liens
+                    }
+                });
+            };
+
+            // Met à jour les liens selon le rôle sélectionné
+            roleSelector.addEventListener("change", (e) => {
+                const selectedRole = e.target.value;
+                updateNavLinks(selectedRole);
+            });
+
+            // Initialise avec le rôle par défaut (non-connecté)
+            updateNavLinks(roleSelector.value);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="register.html">Inscription</a>
+            </div>
+            <div class="user-role-dropdown">
+                <label for="user-role">Rôle :</label>
+                <select id="user-role" class="role-selector">
+                    <option value="non-connecte">Non connecté</option>
+                    <option value="habitant">Habitant</option>
+                    <option value="benevole">Bénévole</option>
+                    <option value="organisateur">Organisateur municipal</option>
+                    <option value="admin">Administrateur</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="form-section">
+            <h2>Connexion</h2>
+            <form>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" class="button">Se connecter</button>
+            </form>
+        </section>
+    </main>
+    <script src="../js/role-management.js"></script>
+</body>
+</html>
