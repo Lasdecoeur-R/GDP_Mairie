@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des événements</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <title>Gestion des bénévoles</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
@@ -12,8 +12,8 @@
             <div class="nav-links">
                 <a href="index.html">Accueil</a>
                 <a href="dashboard.html">Tableau de bord</a>
-                <a href="event-submission.html" style="display: none;">Soumettre une idée</a>
-                <a href="event-validation.html" style="display: none;">Validation des propositions</a>
+                <a href="event-list.html">Liste des événements</a>
+                <a href="stats.html" style="display: none;">Statistiques</a>
             </div>
             <div class="user-role-dropdown">
                 <label for="user-role">Rôle :</label>
@@ -28,24 +28,22 @@
         </nav>
     </header>
     <main>
-        <section class="event-list">
-            <h2>Liste des événements</h2>
+        <section class="volunteer-management">
+            <h2>Gestion des bénévoles</h2>
             <ul>
                 <li>
-                    <h3>Événement 1</h3>
-                    <p>Description : Journée sportive au parc</p>
-                    <p>Date : 12/01/2025</p>
-                    <p>Lieu : Parc de la ville</p>
+                    <h3>Événement : Journée sportive</h3>
+                    <p>Bénévoles inscrits : 8/10</p>
+                    <button class="button">Voir détails</button>
                 </li>
                 <li>
-                    <h3>Événement 2</h3>
-                    <p>Description : Concert en plein air</p>
-                    <p>Date : 15/01/2025</p>
-                    <p>Lieu : Place centrale</p>
+                    <h3>Événement : Concert en plein air</h3>
+                    <p>Bénévoles inscrits : 5/10</p>
+                    <button class="button">Voir détails</button>
                 </li>
             </ul>
         </section>
     </main>
-    <script src="../js/role-management.js"></script>
+    <script src="js/role-management.js"></script>
 </body>
 </html>

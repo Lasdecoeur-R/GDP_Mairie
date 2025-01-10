@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="dashboard.html">Tableau de bord</a>
+                <a href="event-list.html">Liste des événements</a>
+            </div>
+            <div class="user-role-dropdown">
+                <label for="user-role">Rôle :</label>
+                <select id="user-role" class="role-selector">
+                    <option value="non-connecte">Non connecté</option>
+                    <option value="habitant">Habitant</option>
+                    <option value="benevole">Bénévole</option>
+                    <option value="organisateur">Organisateur municipal</option>
+                    <option value="admin">Administrateur</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="notifications">
+            <h2>Vos notifications</h2>
+            <ul>
+                <li>Votre proposition "Journée de nettoyage" a été validée.</li>
+                <li>Un nouvel événement a été ajouté : "Concert en plein air".</li>
+                <li>Un bénévole s'est inscrit pour votre événement "Marché local".</li>
+            </ul>
+        </section>
+    </main>
+    <script src="js/role-management.js"></script>
+</body>
+</html>
